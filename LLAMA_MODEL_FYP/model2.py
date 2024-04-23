@@ -7,14 +7,9 @@ from langchain.chains import RetrievalQA
 from Pdf_Generator.pdf_generator import run
 import os
 
-# Get the directory of the current script
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Construct absolute path to the vector store
 DB_FAISS_PATH = os.path.join(current_dir, 'vectorstore', 'science_faiss')
-
-
-# DB_FAISS_PATH = 'vectorstore/science_faiss'
 
 custom_prompt_template = """Use the following pieces of information to answer the user's question.
 If you don't know the answer, just say that you don't know, don't try to make up an answer.
@@ -30,14 +25,12 @@ I need fifteen exact sentences as a paragraph.
 """
 
 def set_custom_prompt():
-    """
-    Prompt template for QA retrieval for each vectorstore
-    """
+
     prompt = PromptTemplate(template=custom_prompt_template,
                             input_variables=['context', 'question'])
     return prompt
 
-# Retrieval QA Chain
+
 def retrieval_qa_chain(llm, prompt, db, k):
     retriever = db.as_retriever(search_kwargs={'k': k})  # Adjust k parameter here
     qa_chain = RetrievalQA.from_chain_type(llm=llm,
@@ -48,12 +41,11 @@ def retrieval_qa_chain(llm, prompt, db, k):
                                           )
     return qa_chain
 
-# Loading the model
+
 def load_llm():
-    # Load the locally downloaded model here
+    
     llm = CTransformers(
         model="TheBloke/Llama-2-7B-Chat-GGML",
-        # model = "llama-2-7b-chat.ggmlv3.q8_0.bin",
         model_type="llama",
         max_new_tokens=2048,
         temperature=0.1,
@@ -61,21 +53,20 @@ def load_llm():
     )
     return llm
 
-# QA Model Function
+
 def qa_bot(k=1):
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2",
                                        model_kwargs={'device': 'cpu'})
     db = FAISS.load_local(DB_FAISS_PATH, embeddings, allow_dangerous_deserialization=True)
     llm = load_llm()
     qa_prompt = set_custom_prompt()
-    qa = retrieval_qa_chain(llm, qa_prompt, db, k=k)  # Default k value set to 5
+    qa = retrieval_qa_chain(llm, qa_prompt, db, k=k)
     return qa
 
 
-# Output function
 def final_result(query):
     qa_result = qa_bot()
-    response = qa_result.invoke({'query': query})  # Using invoke instead of __call__
+    response = qa_result.invoke({'query': query})
     return response
 
 def send_answer(score, query):
@@ -88,7 +79,6 @@ def send_answer(score, query):
             
             querys = i
 
-            # Adjust k based on the score
             if score == 5:
                 k = 1  # Fetch more documents for score 5
             elif score == 4:
@@ -100,10 +90,8 @@ def send_answer(score, query):
             else:
                 k = 9   # Fetch very few documents for score 1
 
-            # Initialize the QA chain
             chain = qa_bot(k)
             
-            # Make the query
             res = chain.invoke({'query': querys})
             answer = res["result"]
             sources = res["source_documents"]
@@ -123,50 +111,3 @@ def send_answer(score, query):
         # return f"Score: {score}\n{answer}"
     except Exception as e:
         print("Failed:", e)
-
-# def send_answer(score, query):
-#     print("Loading...")
-#     try:
-#         score = 1
-#         query = query
-#         contents = []
-#         #for i in query:
-            
-#         #    query = i
-
-#         # Adjust k based on the score
-#         if score == 5:
-#             k = 1  # Fetch more documents for score 5
-#         elif score == 4:
-#             k = 3   # Fetch fewer documents for score 4
-#         elif score == 3:
-#             k = 5   # Fetch even fewer documents for score 3
-#         elif score == 2:
-#             k = 7   # Fetch even fewer documents for score 2
-#         else:
-#             k = 9   # Fetch very few documents for score 1
-
-#         # Initialize the QA chain
-#         chain = qa_bot(k)
-        
-#         # Make the query
-#         res = chain.invoke({'query': query})
-#         answer = res["result"]
-#         sources = res["source_documents"]
-#         print(answer, type(answer))
-#         value = answer.split(".")
-#         print(value)
-#         answer = '. '.join(value[:score+1])
-#         #contents.append(answer)
-#         '''if sources:
-#             source_content = " ".join([doc.page_content for doc in sources])
-#             #answer += f"\n\nAdditional Content:\n{source_content}"
-#         else:
-#             answer += "\nNo sources found"'''
-#         print(type(query), type(contents))
-#         run(query, contents)
-#         return f"Score: {score}\n{answer}"
-#     except Exception as e:
-#         print("Failed:", e)
-
-# send_answer(1,['What is magnitude'])

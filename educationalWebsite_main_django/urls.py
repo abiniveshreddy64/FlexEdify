@@ -36,6 +36,4 @@ urlpatterns = [
     path('sciencelearning/<str:chapter>/adaptivelearning/', views.tryingaritm, name='scienceadaptivelearning'),
     path('sciencelearning/<str:chapter>/adaptivelearning/test/', views.test, name='sciencetest'),
     path('sciencelearning/<str:chapter>/subtopiclearn', views.subtopiclearn, name='sciencesubtopiclearn'),
-    #path('student/', views.one),
-    #path('student/<int:studentid>', views.onedetails)
 ]

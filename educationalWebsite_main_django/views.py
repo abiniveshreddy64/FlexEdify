@@ -34,7 +34,6 @@ def home(request):
 @login_required
 def profile(request):
     user = get_object_or_404(Login, username='abi')
-    # Retrieve user-specific data or perform any necessary operations
     context = {
         'user': user,
     }
@@ -54,13 +53,11 @@ def mathlearning(request):
     return render(request,'mathindex.html',data)
 
 def mathchaplearning(request, chapter ):
-    # Render the corresponding HTML template based on the chapter parameter
     template_name = f"math{chapter}.html"
     
     return render(request, template_name)
 
 def sciencechaplearning(request, chapter ):
-    # Render the corresponding HTML template based on the chapter parameter
     template_name = f"science{chapter}.html"
     
     return render(request, template_name)
@@ -76,13 +73,11 @@ def test(request, chapter):
         topics = {}
         all_topics = []
 
-        # Retrieve correct answers and user-selected answers
         for todo in todos:
             correct_answers[todo.id] = todo.c_answer
             user_answers[todo.id] = int(request.POST.get('c_answer_' + str(todo.id)))
             topics[todo.id] = todo.topic
 
-        # Compare correct answers with user-selected answers
         for question_id, correct_answer in correct_answers.items():
             user_answer = user_answers.get(question_id)
             if user_answer == correct_answer:
@@ -96,18 +91,10 @@ def test(request, chapter):
         wrong = len(all_topics)
         percentage = (wrong/total_questions) * 100
         score = min(max(round(percentage/20),0),5)
-        '''
-        topics = {}
-        for todo in todos:
-            topics[todo.id] = todo.topic
-        '''
-
-
         send_answer(score,all_topics)
         return redirect('home')
 
     else:
-        # If the request method is not POST, render the initial form
         todos = Todo.objects.using('other_db').all()
         return render(request, 'test2.html', {'todos': todos})
 
@@ -120,10 +107,3 @@ def sciencelearning(request):
         'chaptersData':chaptersData,
     }
     return render(request,'scienceindex.html',data)
-
-
-'''def one(request):
-    return HttpResponse("hello world")
-
-def onedetails(request, studentid):
-    return HttpResponse(studentid)'''
