@@ -1,0 +1,12 @@
+pypdf
+langchain
+torch
+accelerate
+bitsandbytes
+ctransformers
+sentence_transformers
+faiss_cpu
+huggingface_hub
+django
+reportlab
+flask
