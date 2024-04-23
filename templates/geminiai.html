@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/geminiai.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+        .loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>  
+    <div class="container">
+        <p id="ans"></p>
+        <div class="downbar">
+            <input type="text" id="question" placeholder="Enter your question...">
+            <button type="button" id="submitButton">
+                <span class="material-symbols-outlined">
+                    chevron_right
+                </span>
+            </button>
+            <label for="inpval">
+                <span class="material-symbols-outlined">
+                attach_file
+                </span>
+            </label>
+            <input type="file" id="inpval" accept="image/*">
+        </div>
+    </div>
+
+    <!-- Loading indicator -->
+    <div class="loading" id="loading">
+        <span>Loading...</span>
+    </div>
+
+    <script type="importmap">
+        {
+        "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+        }
+    </script>
+    <script type="module">
+        const API_KEY = "AIzaSyAqFGMUnQWvaZgf8sxtV56Q9cAVkekqYkE";
+
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+        const genAI = new GoogleGenerativeAI(API_KEY);
+        async function fileToGenerativePart(file) {
+            const base64EncodedDataPromise = new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onloadend = () => resolve(reader.result.split(',')[1]);
+                reader.readAsDataURL(file);
+            });
+            return {
+                inlineData: { data: await base64EncodedDataPromise, mimeType: file.type },
+            };
+        }
+
+        const submitButton = document.getElementById("submitButton");
+        const questionInput = document.getElementById("question");
+        const loadingElement = document.getElementById("loading");
+
+        // Function to submit the question
+        async function submitQuestion() {
+            loadingElement.style.display = "block"; // Show loading indicator
+            const ansElement = document.getElementById("ans");
+            const fileInputEl = document.querySelector("input[type=file]");
+
+            if (fileInputEl.files.length) {
+                const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
+                const prompt = questionInput.value;
+
+                const imageParts = await Promise.all(
+                    [...fileInputEl.files].map(fileToGenerativePart)
+                );
+
+                try {
+                    const result = await model.generateContent([prompt + " give each steps with only the equations and no words", ...imageParts]);
+                    const response = await result.response;
+                    const text = response.text();
+
+                    // Append the new answer to the existing content
+                    ansElement.innerHTML += `<p style="background-color: rgb(186, 255, 186); padding: 8px; border-radius: 4px; margin-bottom: 5px;">${prompt}</p><p class="new-answer">${text}</p>`;
+                } catch (error) {
+                    console.error("Error from API:", error);
+                }
+            } else {
+                const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+                const prompt = questionInput.value;
+
+                const result = await model.generateContent(prompt);
+                const response = await result.response;
+                const text = response.text();
+                ansElement.innerHTML += `<p style="background-color: rgb(186, 255, 186); padding: 8px; border-radius: 4px; margin-bottom: 5px;">${prompt}</p><p class="new-answer">${text}</p>`;
+            }
+            loadingElement.style.display = "none"; // Hide loading indicator
+            questionInput.value = "";
+        }
+
+        submitButton.addEventListener("click", submitQuestion);
+
+        // Listen for keydown event on the input field
+        questionInput.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Prevent the default Enter key behavior
+                submitQuestion(); // Call the submitQuestion function when Enter key is pressed
+            }
+        });
+    </script>
+</body>
+</html>

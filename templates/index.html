@@ -1,0 +1,125 @@
+{% include "header.html" %}
+<link rel="stylesheet" href="/static/styles/index.css"/>
+  <section class="header">
+    <video src="/static/images/mainback2.mp4" autoplay loop muted></video>
+        <div class="text-box">
+          <div>
+            <h1>Welcome Abinivesh!</h1>
+            <p>
+              Class: 10th<br> Roll no.: 21
+            </p>
+            <a href="/profile" class="hero-btn">Know more about yourself</a>
+          </div>
+          <div class="chart">
+            <div id="pie"></div>
+            <h3><span id="ngval"></span></h3>
+          </div>
+        </div>
+      </section>
+
+    <!-- course -->
+    <div class="mainback">
+      <section class="campus" id="campus">
+        <h1>Subjects</h1>
+        <p>Choose the desired subject according to the needs</p>
+        <div class="row">
+          <div class="campus-col">
+            <button class="arbut" onclick="goToPage('sciencelearning')">
+              <img src="/static/images/biology.jpeg" alt="">
+              <div class="layer">
+                <h3>SCIENCE</h3>
+              </div>
+            </button>
+          </div>
+          <div class="campus-col">
+            <button class="arbut" onclick="goToPage('mathlearning')">
+              <img src="/static/images/math.jpg" alt="">
+              <div class="layer">
+                <h3>MATHS</h3>
+              </div>
+            </button>
+          </div>
+          <div class="campus-col">
+            <button class="arbut" onclick="goToPage('#')">
+              <img src="/static/images/sst.jpeg" alt="">
+              <div class="layer">
+                <h3>SOCIAL</h3>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="campus-col">
+            <button class="arbut" onclick="goToPage('#')">
+              <img src="/static/images/hindi.jpeg" alt="">
+              <div class="layer">
+                <h3>HINDI</h3>
+              </div>
+            </button>
+          </div>
+          <div class="campus-col">
+            <button class="arbut" onclick="goToPage('#')">
+              <img src="/static/images/art.jpeg" alt="">
+              <div class="layer">
+                <h3>ART</h3>
+              </div>
+            </button>
+          </div>
+          <div class="campus-col">
+            <button class="arbut" onclick="goToPage('#')">
+              <img src="/static/images/english.jpeg" alt="">
+              <div class="layer">
+                <h3>ENGLISH</h3>
+              </div>
+            </button>
+          </div>
+          </div>
+      </section>
+      <section class="testimonials">
+        <h1>What your Teachers Says</h1>
+        <p>Read the remarks given by teachers</p>
+        <div class="row">
+          <div class="testimonial-col">
+            <img src="/static/images/user1.jpg" alt="">
+            <div>
+              <p>You lack a little in the topic of Quadratic Equation, focus more on that to get better results.</p>
+              <h3>Math Teacher</h3>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+          </div>
+          <div class="testimonial-col">
+            <img src="/static/images/user2.jpg" alt="">
+            <div>
+              <p>Focus more on your grammer and spellings.</p>
+            <h3>English Teacher</h3>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </section>  
+    </div>
+  </section>
+
+    <!--------- footer --------->
+
+    {% include "footer.html" %}
+    <div id="chatbotIcon" style="position: fixed; bottom: 20px; right: 20px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 50%; background-color: orange; color: white; padding: 10px; z-index: 3;">
+      <span class="material-symbols-outlined">
+        smart_toy
+      </span>
+    </div>
+    <div id="chatbotContainer" class="chatbot-container">
+      <iframe src="/geminiai.html" width="100%" height="100%" style="border: none; align-items: center; justify-content: center;">
+      </iframe>
+    </div>
+    <script src="/static/javascript/script.js"></script>
+  </body>
+</html>

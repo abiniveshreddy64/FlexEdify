@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Website</title>
+    <link rel="stylesheet" href="./styles/trying.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <style>
+    iframe {
+        width: 100%;
+        border: none;
+        overflow: scroll;
+        height: 500px;
+        margin-right: 60px;
+        background-color: #eee;
+        overflow-y: scroll;
+    }
+    .iframe::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    .iframe {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+    body{
+        overflow: hidden;
+    }
+    .initial-white-page {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        z-index: 9999;
+      }
+</style>
+        
+    <body>
+        <div class="initial-white-page"></div>
+      <section class="header">
+      <nav>
+        <a href="index.html"><img src="./images/logo.png" alt="Logo" id="imglogo"/></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa-solid fa fa-xmark" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./games.html">GAMES</a></li>
+            <li><a href="./ss/science/index.html">AR Learning</a></li>
+            <li><a href="./profile.html">ACCOUNT</a></li>
+          </ul>
+        </div>
+        <i class="fa-solid fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+    </section>
+    <h1>Welcome to My Webpage</h1>
+    <p>Below is an embedded third-party website:</p>
+    
+    <iframe src="https://learn.amy.app/studentAssignments/vkop6x2RcRaqrDAoDN05" width="600" height="300"></iframe>
+    <div style="width: 100px; height: 300px; background-color: white; position: absolute; right: 15px;top: 150px; z-index: 3;"></div>
+    <script>
+        alert("Loading... Please wait for 10 seconds")
+        // Add a delay of 5 seconds before removing the initial white page
+        setTimeout(function () {
+          document.querySelector('.initial-white-page').style.display = 'none';
+          document.body.style.overflow = 'visible';
+        }, 7000);
+      </script>
+</body>
+</html>

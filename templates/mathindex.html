@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/static/styles/mathstyles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RoadMap</title>
+  </head>
+  <body>
+    <h1>RoadMap - Mathematics</h1>
+    <ul>
+      {% for n in chaptersData  %}
+      <li style="--accent-color: {% if forloop.counter0|divisibleby:2 %}#fbca3e{% else %}#1b5f8c{% endif %}">
+        <a href="{% url 'mathlearning' chapter='rat' %}" class="date">{{n.mathchapter_title}}</a>
+        <div class="descr">
+          {{n.mathchapter_description}}
+        </div>
+      </li>
+      {% endfor %}
+      
+      <!--
+      <li style="--accent-color: #fbca3e">
+        <a href="{% url 'mathlearning' chapter='lin' %}" class="date">Linear Equations in One Variable</a>
+        <div class="descr">
+          Introduction, Solving Equations having the Variable on both Sides,
+          Reducing Equations to Simpler Form
+        </div>
+      </li>
+      <li style="--accent-color: #e24a68">
+        <a class="date">Understanding Quadrilaterals</a>
+        <div class="descr">
+          Introduction: Convex and concave polygons, Regular and irregular
+          polygons, Sum of the Measures of the Exterior Angles of a Polygon,
+          Kinds of Quadrilaterals: Trapezium, Kite, Parallelogram, Elements of a
+          parallelogram, Angles of a parallelogram, Diagonals of a
+          parallelogram, Some Special Parallelograms: Rhombus, A
+          rectangle, A square
+        </div>
+      </li>
+      <li style="--accent-color: #1b5f8c">
+        <a class="date">Data Handling</a>
+        <div class="descr">
+          Looking for Information, Circle Graph or Pie Chart: Drawing pie
+          charts, Chance and Probability: Getting a result, Equally likely
+          outcomes: Linking chances to probability, Outcomes as events, Chance
+          and probability related to real life
+        </div>
+      </li>
+      <li style="--accent-color: #4cadad">
+        <a class="date">Squares and Square Roots</a>
+        <div class="descr">
+          Introduction, Properties of Square Numbers, Some More Interesting
+          Patterns , Finding the Square of a Number, Square Roots: Finding
+          square roots, Finding square root through repeated subtraction,
+          Finding square root through prime factorization, Finding square root
+          by division method, Square Roots of Decimals
+        </div>
+      </li>
+      <li style="--accent-color: #41516c">
+        <a class="date">Cubes and Cube Roots</a>
+        <div class="descr">
+          Introduction, Cubes, Some interesting patterns, Cube Roots: Cube root
+          through prime factorization method
+        </div>
+      </li>
+      <li style="--accent-color: #fbca3e">
+        <a class="date">Comparing Quantities</a>
+        <div class="descr">
+          Recalling Ratios and Percentages, Finding Discounts: Estimation in
+          percentages, Sales Tax/Value Added Tax/Goods and Services Tax,
+          Compound Interest, Deducing a Formula for Compound Interest,
+          Applications of Compound Interest Formula
+        </div>
+      </li>
+      <li style="--accent-color: #e24a68">
+        <a class="date">Algebraic Expressions and Identities</a>
+        <div class="descr">
+          Addition and Subtraction of Algebraic Expressions, Multiplication of
+          Algebraic Expressions: Introduction, Multiplying a Monomial by a
+          Monomial: Multiplying two monomials, Multiplying three or more
+          monomials, Multiplying a Monomial by a Polynomial: Multiplying a
+          monomial by a binomial, Multiplying a monomial by a trinomial,
+          Multiplying a Polynomial by a Polynomial: Multiplying a binomial by a
+          binomial, Multiplying a binomial by a trinomial
+        </div>
+      </li>
+      <li style="--accent-color: #1b5f8c">
+        <a class="date">Mensuration</a>
+        <div class="descr">
+          Introduction, Area of a Polygon, Solid Shapes, Surface Area of Cube,
+          Cuboid, and Cylinder: Cuboid, Cube, Cylinders, Volume of Cube, Cuboid
+          and Cylinder: Cuboid, Cube, Cylinder, Volume and Capacity
+        </div>
+      </li>
+      <li style="--accent-color: #4cadad">
+        <a class="date">Exponents and Powers</a>
+        <div class="descr">
+          Introduction, Powers with Negative Exponents, Laws of Exponents, Use
+          of Exponents to Express Small Numbers in Standard Form: Comparing very
+          large and very small numbers
+        </div>
+      </li>
+      <li style="--accent-color: #41516c">
+        <a class="date">Direct and Inverse Proportions</a>
+        <div class="descr">
+          Introduction, Direct Proportion, Inverse Proportion
+        </div>
+      </li>
+      <li style="--accent-color: #fbca3e">
+        <a class="date">Factorisation</a>
+        <div class="descr">
+          Introduction: Factors of natural numbers, Factors of algebraic
+          expressions What is Factorisation?: Method of common factors,
+          Factorisation by regrouping terms, Factorisation using identities,
+          Factors of the form ( x + a) ( x + b), Division of Algebraic
+          Expressions: Division of a monomial by another monomial, Division of a
+          polynomial by a monomial, Division of Algebraic Expressions Continued
+          (Polynomial ÷ Polynomial)orem ipsum dolor sit, amet consectetur
+          adipisicing elit. Quos adipisci nobis nostrum vero nihil veniam.
+        </div>
+      </li>
+      <li style="--accent-color: #e24a68">
+        <a class="date">Introduction to Graphs</a>
+        <div class="descr">Introduction: A line graph, Some Applications</div>
+      </li>-->
+    </ul>
+  </body>
+</html>

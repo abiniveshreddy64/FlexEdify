@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/static/styles/sciencestyles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RoadMap</title>
+  </head>
+  <body>
+    <h1>RoadMap - Science</h1>
+    <div class="vr">
+      <h2>Play with AR/VR!</h2>
+      <div class="vr-options">
+        <div>
+          <a href="https://phy-nu.vercel.app/">Physics</a>
+        </div>
+        <div>
+          <a href="https://chemistry-dhruvdange.vercel.app/">Chemistry</a>
+        </div>
+        <div>
+          <a href="https://biology-dhruvdange.vercel.app/" >Biology</a>
+        </div>
+      </div>
+    </div>
+    <ul>
+      {% for n in chaptersData %}
+
+      <li style="--accent-color: {% if forloop.counter0|divisibleby:2 %}#fbca3e{% else %}#1b5f8c{% endif %}">
+
+        <a  href="{% url 'sciencelearning' chapter='fp' %}"  class="date">{{n.sciencechapter_title}}</a>
+        <div class="descr">
+          {{n.sciencechapter_description}}
+        </div>
+      </li>
+      {% endfor %}
+      <!--
+      <li style="--accent-color: #fbca3e">
+        <a class="date">Friction</a>
+        <div class="descr">
+          Types of friction, factors affecting friction, methods to reduce
+          friction, and practical applications of friction in daily life.
+        </div>
+      </li>
+      <li style="--accent-color: #e24a68">
+        <a class="date">Sound</a>
+        <div class="descr">
+          Production of sound, characteristics of sound waves, speed of sound,
+          reflection and refraction of sound,applications of sound waves.
+        </div>
+      </li>
+      <li style="--accent-color: #1b5f8c">
+        <a class="date">Chemical Effects of Electric Current</a>
+        <div class="descr">
+          Conductors and insulators, the chemical effects of electric current,
+          electroplating, and the functioning of electric cells and batteries.
+        </div>
+      </li>
+      <li style="--accent-color: #4cadad">
+        <a class="date">Light</a>
+        <div class="descr">
+          Reflection and refraction of light, laws of reflection, image
+          formation by lenses and mirrors, and the human eye and its defects.
+        </div>
+      </li>
+      <li style="--accent-color: #41516c">
+        <a class="date">Stars and the Solar System</a>
+        <div class="descr">
+          Solar system's components, planets, satellites, stars, and
+          constellations, as well as the formation of the solar system.
+        </div>
+      </li>
+      <li style="--accent-color: #fbca3e">
+        <a class="date">Pollution of Air and Water</a>
+        <div class="descr">
+          types of pollution, their causes, and potential solutions to mitigate
+          environmental impact.
+        </div>
+      </li>
+      </li>
+      <li style="--accent-color: #e24a68">
+        <a class="date">Introduction to Graphs</a>
+        <div class="descr">Introduction: A line graph, Some Applications</div>
+      </li>-->
+    </ul>
+  </body>
+</html>

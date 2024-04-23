@@ -1,0 +1,118 @@
+* {
+    font-family: "Noto Serif", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Add this style to your navigation panel */
+.sub-header {
+    width: 100%;
+    padding: 20px;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+}
+
+/* Add this style to your navigation links (adjust as needed) */
+.sub-header a {
+    color: #fff; /* Set the text color to white or a contrasting color */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.sub-header a:hover {
+    color: #ccc; /* Set the hover color to a different color for contrast */
+}
+
+/* Add this style to the logo image */
+#imglogo {
+    z-index: 2; 
+    width: 13%;
+    margin-right: 20px; 
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.sub-header h1 {
+    margin: 0;
+    color: white;
+}
+
+.two-containers {
+    position: relative;
+    z-index: 1; /* Ensure the content is above the video */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5vh;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.container {
+    width: 48%; 
+    height: 100vh;
+    padding: 40px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: white;
+    border-radius: 30px;
+    text-align: center;
+    overflow: auto;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.bottom {
+    position: relative;
+    z-index: 1; /* Ensure the content is above the video */
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.bottom button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color:  #fa595f;
+    color: white;
+}
+
+.bottom button:hover {
+    background-color: #ccc;
+    color: black;
+}

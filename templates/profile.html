@@ -1,0 +1,141 @@
+{% include "header.html" %}
+<link rel="stylesheet" href="/static/styles/profile.css"/>
+  <section class='header'>
+      <div class="text-box">
+        <div style="text-align: left;">
+          <h2>Y Abinivesh Reddy</h2>
+          <p>
+            Class: 10th<br> Roll no.: 21
+          </p>
+          <div>
+          <h3>Badges:</h3>
+          <i class="fa-solid fa-star" style="color: yellow;"></i>
+          <i class="fa-solid fa-star" style="color: yellow;"></i>
+          <i class="fa-solid fa-star" style="color: yellow;"></i>
+          <i class="fa-solid fa-star" style="color: yellow;"></i>
+          </div>
+
+  <div class="card">
+  	<div class="another">
+			<span class="title big">Ratings</span>
+		</div>
+		<div class="clearfix"></div>
+		<div class="parameter">
+			<span class="red">Current Rating</span>
+			<span class="blue">Last year Rating</span>
+		</div>
+		<div class="statistic">
+			<div class="line-1"></div>
+			<div class="line-2"></div>
+			<div class="line-3"></div>
+			<div class="data red">
+				<svg>
+					<polyline points="9,46 50,12 90,23 130,11 171,38 211,48 251,19"></polyline>    
+				</svg>
+				<div class="points">
+					<div class="point-1">
+						<div class="tooltip">458</div>
+					</div>
+					<div class="point-2">
+						<div class="tooltip">812</div>
+					</div>
+					<div class="point-3">
+						<div class="tooltip">746</div>
+					</div>
+					<div class="point-4">
+						<div class="tooltip">877</div>
+					</div>
+					<div class="point-5">
+						<div class="tooltip">517</div>
+					</div>
+					<div class="point-6">
+						<div class="tooltip">434</div>
+					</div>
+					<div class="point-7">
+						<div class="tooltip">458</div>
+					</div>
+				</div>
+			</div>
+			<div class="data blue">
+				<svg>
+					<polyline points="9,61 50,50 90,65 130,55 171,61 211,74 251,64"></polyline>    
+				</svg>
+				<div class="points">
+					<div class="point-1">
+						<div class="tooltip">26</div>
+					</div>
+					<div class="point-2">
+						<div class="tooltip">41</div>
+					</div>
+					<div class="point-3">
+						<div class="tooltip">22</div>
+					</div>
+					<div class="point-4">
+						<div class="tooltip">36</div>
+					</div>
+					<div class="point-5">
+						<div class="tooltip">25</div>
+					</div>
+					<div class="point-6">
+						<div class="tooltip">13</div>
+					</div>
+					<div class="point-7">
+						<div class="tooltip">20</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="days">
+			<span class="day">Jan</span>
+			<span class="day">Feb</span>
+			<span class="day">Mar</span>
+			<span class="day">Apr</span>
+			<span class="day">May</span>
+			<span class="day">June</span>
+			<span class="day">July</span>
+      <span class="day">Aug</span>
+      <span class="day">Sep</span>
+      <span class="day">Oct</span>
+      <span class="day">Nov</span>
+      <span class="day">Dec</span>
+		</div>
+  </div>
+      </div>
+      <div class="user-photo-container">
+        <img src="/static/images/abinivesh.jpg" alt="User Photo" class="user-photo" />
+      </div>
+      <div class="feedback-form">
+        <h3>Feedback Form</h3>
+        <form id="feedbackForm">
+          <div class="form-group">
+            <label for="feedbackInput">Feedback:</label>
+            <input type="text" id="feedbackInput" name="feedback" placeholder="Enter your feedback" required />
+          </div>
+          <div class="form-group">
+            <label for="ratingDropdown">Subject:</label>
+            <select id="ratingDropdown" name="rating" required>
+              <option value="5">Math</option>
+              <option value="4">Science</option>
+              <option value="3">English</option>
+              <option value="2">Social Studies</option>
+              <option value="1">Hindi</option>
+            </select>
+          </div>
+          <button type="button" onclick="submitFeedback()" class="submitbtn">Submit</button>
+        </form>
+      </div>
+      
+    </section>
+  </section>
+    <div id="chatbotIcon" style="position: fixed; bottom: 20px; right: 20px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 50%; background-color: orange; color: white; padding: 10px;">
+      <span class="material-symbols-outlined">
+        smart_toy
+      </span>
+    </div>
+    <div id="chatbotContainer" class="chatbot-container">
+      <iframe src="/geminiai.html" width="100%" height="100%" style="border: none; align-items: center; justify-content: center;">
+      </iframe>
+    </div>
+    <script src="/static/javascript/script.js"></script>
+  </body>
+</html>

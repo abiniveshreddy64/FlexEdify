@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Website</title>
+    <link rel="stylesheet" href="/static/styles/subtopiclearn.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+        
+    <body>
+        
+        <section class="sub-header">
+            <div class="header-content">
+                <a href="index.html"><img src="/static/images/logo.png" alt="" id="imglogo"/></a>
+                <h1>Learn yourself</h1>
+            </div>
+        </section>
+        <section>
+        <div class="two-containers">
+            
+            <div class="container">
+                <!-- Content for the first container -->
+                <h2>Brief Steps to solve:</h2>
+                <p style="text-align: left;font-family: 'Comfortaa', sans-serif; margin-top: 30px;">
+                    <strong>Step 1:</strong> Write down the quadratic equation in the form (ax^2 + bx + c = 0), where a, b are coefficients and c is constant.
+                    <br>
+                    <strong>Step 2:</strong> For the equation (y^2 + 10y + 21 = 0), the coefficients are (a = 1), (b = 10), and (c = 21).
+                    <br>
+                    <strong>Step 3:</strong> Calculate the discriminant using the formula (D = b^2 - 4ac).
+                    <br>
+                    <strong>Step 4:</strong> For this equation, (D = 10^2 - 4(1)(21)).
+                    <br>
+                    <strong>Step 5:</strong> Evaluate the discriminant: (D > 0), so there are two real and distinct roots.
+                    <br>
+                    <strong>Step 6:</strong> Use the quadratic formula to find the roots: (y = (-b +- (D)**0.5)/2a).
+                    <br>
+                    <strong>Step 7:</strong> Substitute the values of (a), (b), and (D) into the formula to find the roots.
+                    <br>
+                    <strong>Step 8:</strong> Simplify the expressions to get the numerical values of the roots.
+                </p>
+            </div>
+            <div class="container">
+                <!-- Content for the second container -->
+                <h2>YouTube Videos</h2>
+                <div class="video-container">
+                    <!-- You can add multiple iframe elements with different video URLs -->
+                    <iframe style="margin-top: 20px;" width="500" height="315" src="https://www.youtube.com/embed/UtReXKgmQ10?si=GyDDz5Qtk1hhuhvb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe style="margin-top: 20px;" width="500" height="315" src="https://www.youtube.com/embed/vIfHJQAh3jM?si=MCPRh9A6koIAYjfW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
+                </div>
+            </div>
+            
+        </div>
+        <div class="bottom" style="margin-bottom: 50px;">
+            <button onclick="goToPage('{% url 'test' chapter='rat' %}')">Take Test</button>
+            <button onclick="goToPage('{% url 'adaptivelearning' chapter='rat' %}')">Return to the Test</button>
+        </div>
+        </section>
+    </body>
+    <script src="/static/javascript/script.js"></script>
+</html>

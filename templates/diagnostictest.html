@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/diagnostictest.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let currentQuestionIndex = 0;
+      const questions = [
+        {
+          text: 'Chapter 1 – Rational Numbers:\n\n1.1. Question: Which of the following numbers is a rational number?\nOptions:\nA) √7\nB) 0.25\nC) π\nD) -√5\nAnswer: B) 0.25\nDifficulty Level: 1\nConcept: Rational and Irrational Numbers\nHint: Rational numbers can be expressed as fractions.',
+          options: ['A) √7', 'B) 0.25', 'C) π', 'D) -√5'],
+          correctAnswer: 1
+        },
+        // Add more questions as needed
+      ];
+
+      const container = document.getElementById('container');
+      const textElement = document.getElementById('questionText');
+      const optionsContainer = document.getElementById('optionsContainer');
+      const nextBtn = document.getElementById('nextBtn');
+
+      function loadQuestion(index) {
+        const question = questions[index];
+        textElement.innerHTML = question.text;
+
+        // Clear previous options
+        optionsContainer.innerHTML = '';
+
+        // Add new options
+        question.options.forEach((option, optionIndex) => {
+          const radioBtn = document.createElement('input');
+          radioBtn.type = 'radio';
+          radioBtn.name = 'option'; // Group the radio buttons
+          radioBtn.value = optionIndex;
+          optionsContainer.appendChild(radioBtn);
+
+          const label = document.createElement('label');
+          label.innerHTML = option;
+          optionsContainer.appendChild(label);
+
+          optionsContainer.appendChild(document.createElement('br'));
+        });
+      }
+
+      function showNextQuestion() {
+  const selectedOption = document.querySelector('input[name="option"]:checked');
+
+  if (selectedOption !== null) {
+    const userAnswerIndex = parseInt(selectedOption.value);
+    const correctAnswerIndex = questions[currentQuestionIndex].correctAnswer;
+
+    // Check the answer
+    if (userAnswerIndex === correctAnswerIndex) {
+      alert('Correct!');
+    } else {
+      alert('Wrong!');
+    }
+
+    // Move to the next question
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < questions.length) {
+      loadQuestion(currentQuestionIndex);
+    } else {
+      alert('Diagnostic test completed!');
+    }
+  } else {
+    alert('Please select an option before moving to the next question.');
+  }
+}
+
+      // Initial load
+      loadQuestion(currentQuestionIndex);
+      nextBtn.addEventListener('click', showNextQuestion);
+    });
+  </script>
+</head>
+<body>
+  <div class="maincontainer">
+    <h1>Diagnostic Test</h1>
+    <div id="container">
+      <p id="questionText"></p>
+      <div id="optionsContainer" class="options"></div>
+      <button id="nextBtn">Next</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Website</title>
+    <link rel="stylesheet" href="./styles/science.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+    <section class="header">
+      <nav>
+        <a href="index.html"><img src="./images/logo.png" alt="Logo" id="imglogo"/></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa-solid fa fa-xmark" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./games.html">GAMES</a></li>
+            <li><a href="./ss/science/index.html">AR Learning</a></li>
+            <!--<li class="menu-item dropdown bell-item">
+              <a href="./about.html" class="menu-link"><i class="fas fa-bell"></i></a>
+                <div class="dropdown-content" style="color: black;">
+                    <a href="http://20.0.31.48:5000/auth/download_csv" class="dropdown-link" style="cursor: pointer;">Assignments</a>
+                    <a href="https://drive.google.com/drive/u/0/folders/1119ni9RIRnzYgTHSYpcAzMlHOX9aPvDM" class="dropdown-link">Notes</a>
+                </div>
+            </li>-->
+            <li><a href="./profile.html">ACCOUNT</a></li>
+          </ul>
+        </div>
+        <i class="fa-solid fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+    </section>
+      <section class="campus" id="campus">
+        <h1>CHAPTERS</h1>
+        <p>Choose the desired chapter according to the need</p>
+        <div class="grid-container">
+            <!-- Container 1 -->
+            <div class="campus-col">
+              <button class="arbut" onclick="goToPage('')">
+                <h3>SCIENCE</h3>
+              </button>
+            </div>
+            
+            <!-- Container 2 -->
+            <div class="campus-col">
+              <button class="arbut" onclick="goToPage('')">
+                <h3>MATHS</h3>
+              </button>
+            </div>
+            
+            <!-- Container 3 -->
+            <div class="campus-col">
+              <button class="arbut" onclick="goToPage('')">
+                <h3>SOCIAL</h3>
+              </button>
+            </div>
+        
+            <!-- Repeat similar structure for the next 3 containers -->
+            
+          </div>
+      </section>
+
+    <section class="footer">
+      <h4>About Us</h4>
+      <p>This is a BMSIT&M student portal</p>
+      <div class="icons">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-linkedin"></i>
+      </div>
+      <p>Made by</i> <br> Y Abinivesh Reddy, Ahaana Singh, Lokesh E, Jitendriyadeep, Ojaswini and Abha </p>
+    </section>
+    <div id="chatbotIcon" style="position: fixed; bottom: 20px; right: 20px; cursor: pointer; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 50%; background-color: orange; color: white; padding: 10px;">
+      <span class="material-symbols-outlined">
+        smart_toy
+      </span>
+    </div>
+    <div id="chatbotContainer" class="chatbot-container">
+      <iframe src="/geminiai.html" width="100%" height="100%" style="border: none; align-items: center; justify-content: center;">
+      </iframe>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

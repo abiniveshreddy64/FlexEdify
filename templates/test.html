@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Website</title>
+    <link rel="stylesheet" href="./styles/test.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+    <body>
+    <section class="sub-header">
+      
+      <nav>
+        <a href="index.html"><img src="./images/logo.png" alt="Logo" id="imglogo"/></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa-solid fa fa-xmark" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./test.html">TEST</a></li>
+            <li><a href="./ss/science/index.html">AR Learning</a></li>
+            <li class="menu-item dropdown bell-item">
+              <a href="./about.html" class="menu-link"><i class="fas fa-bell"></i></a>
+                <div class="dropdown-content" style="color: black;">
+                    <a href="http://20.0.31.48:5000/auth/download_csv" class="dropdown-link" style="cursor: pointer;">Assignments</a>
+                    <a href="https://drive.google.com/drive/u/0/folders/1119ni9RIRnzYgTHSYpcAzMlHOX9aPvDM" class="dropdown-link">Notes</a>
+                </div>
+            </li>
+            <li><a href="./profile.html">PROFILE</a></li>
+          </ul>
+        </div>
+        <i class="fa-solid fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <h1>Take the test to prove yourself</h1>
+    </section>
+
+    <!--blog page content-->
+    <div>
+    <section class="blog-content">
+      <video src="./images/video4.mp4" autoplay loop muted></video>
+          <h1>Quadratic Equation</h1>
+          <div class="comment-box">
+            <div class="container">
+              <h3>Q1. <br><img src="./images/mathq1.png" alt=""></h3>
+              <input type="text" id="answerInput1" placeholder="Enter the final answer here!" required>  
+            </div>
+            <div class="container">
+              <h3>Q2. <br><img src="./images/mathq1.png" alt=""></h3>
+              <input type="text" id="answerInput2" placeholder="Enter the final answer here!" required>  
+            </div>
+            <div class="container">
+              <h3>Q3. <br><img src="./images/mathq1.png" alt=""></h3>
+              <input type="text" id="answerInput3" placeholder="Enter the final answer here!" required>  
+            </div>
+            <div class="container">
+              <h3>Q4. <br><img src="./images/mathq1.png" alt=""></h3>
+              <input type="text" id="answerInput4" placeholder="Enter the final answer here!" required>  
+            </div>
+            <div class="container">
+              <h3>Q5. <br><img src="./images/mathq1.png" alt=""></h3>
+              <input type="text" id="answerInput5" placeholder="Enter the final answer here!" required> 
+            </div>
+            <div class="container">
+              <h3>Q6. <br><img src="./images/mathq1.png" alt=""></h3>
+              <input type="text" id="answerInput6" placeholder="Enter the final answer here!" required>  
+            </div>
+            <div class="container">
+              <h3>Q7. <br><img src="./images/mathq1.png" alt=""></h3>
+              <input type="text" id="answerInput7" placeholder="Enter the final answer here!" required>  
+            </div>
+            <button type="button" class="submitbtn" onclick="submitAnswer()" id="submit1">Submit</button>
+          </div>
+    </section>
+    </div>
+
+
+    <!--end-->
+
+
+    <section class="footer">
+      <h4>About Us</h4>
+      <p>This is a BMSIT&M student portal</p>
+      <div class="icons">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-linkedin"></i>
+      </div>
+      <p>Made by</i> <br> Y Abinivesh Reddy, Ahaana Singh, Lokesh E, Jitendriyadeep, Ojaswini and Abha </p>
+    </section>
+    <div class="overlay" id="overlay">
+      <div class="dialogbox" id="maindialog" style="display: none;">
+        <p>Thank you! The responses have been recorded successfully</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

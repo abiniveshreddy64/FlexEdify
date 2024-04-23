@@ -1,0 +1,143 @@
+* {
+  font-family: "Noto Serif", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+}
+
+.blog-content {
+  padding: 60px 0;
+  margin: auto;
+  width: 70%;
+}
+
+.blog-content h1 {
+  color: #222;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.comment-box {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 50px;
+  background-color: #fff;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.comment-box h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.answer-selection label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.radio-buttons input[type="radio"] {
+  display: none;
+}
+
+.radio-buttons label {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.radio-buttons label:hover {
+  background-color: #e0e0e0;
+}
+
+.radio-buttons input[type="radio"]:checked + label {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.submitbtn {
+  display: block;
+  margin: 20px auto;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  background-color: #f44336;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitbtn:hover {
+  background-color: #ff7f84;
+}
+
+.question-container {
+  position: relative; /* Set position relative for positioning the required note */
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.question-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.required-note {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  font-size: 12px;
+  color: #f44336; /* Red color for required note */
+}
+
+.question-number {
+  font-weight: bold;
+  font-size: 18px;
+  color: #f44336; /* Red color for question number */
+  margin-bottom: 10px;
+}
+
+.question {
+  font-size: 16px;
+  color: #333333; /* Dark color for question text */
+  margin-bottom: 15px;
+}
+
+.answer-selection label {
+  font-size: 14px;
+  color: #555555; /* Gray color for answer options */
+}
+
+.radio-buttons input[type="radio"] {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.submitbtn {
+  background-color: #f44336; /* Red color for submit button */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitbtn:hover {
+  background-color: #d32f2f; /* Darker red color on hover */
+}
+
