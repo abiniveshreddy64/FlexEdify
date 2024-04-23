@@ -62,3 +62,20 @@ Before you can start using the FlexEdify, make sure you have the following prere
    ```
 6. Copy the localhost url from the terminal and paste it in your browser.
 7. You are done!! :metal: Work with the project to check how it executes.
+
+## Project Images:
+
+1. Home Page of Website:
+   <img width="947" alt="Homepage" src="https://github.com/abiniveshreddy64/FlexEdify/assets/67746765/8b7322d1-f790-48bf-8ff5-328d2b1e065d">
+
+2. Chatbot present at the right bottom corner of the screen: <br />
+   <img width="265" alt="Chatbot" src="https://github.com/abiniveshreddy64/FlexEdify/assets/67746765/3f632c5c-e963-4ba8-a012-fe245efe22da">
+
+3. Test Web Page:
+   <img width="941" alt="Test" src="https://github.com/abiniveshreddy64/FlexEdify/assets/67746765/77bfa3db-f1ae-435c-a4e7-e8d8a95289a3">
+
+4. Adaptive Learning:
+   <img width="941" alt="adaptive test" src="https://github.com/abiniveshreddy64/FlexEdify/assets/67746765/14a317a3-0c44-43e6-8434-b233779e184b">
+
+5. Profile Page:
+   <img width="944" alt="profile" src="https://github.com/abiniveshreddy64/FlexEdify/assets/67746765/10f67d1d-a26b-48cc-a786-9281148cd117">
