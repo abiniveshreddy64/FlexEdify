@@ -33,3 +33,32 @@ Before you can start using the FlexEdify, make sure you have the following prere
   - faiss
   - PyPDF2 (for PDF document loading)
   - reportlab
+
+## Installation:
+
+1. Clone this repository to your local machine.
+
+   ```git
+   git clone https://github.com/abiniveshreddy64/FlexEdify.git
+   cd FlexEdify
+   ```
+2. Create a Python virtual environment (optional but recommended):
+
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+   ```
+3. Install the required Python packages:
+
+   ```
+   pip install -r requirements.txt
+   ```
+4. Initialize Gemini API Key of yours and replace it in the geminiai.html file.
+
+5. To start executing the website, go to the location where manage.py is present and type:
+
+   ```python
+   python manage.py runserver
+   ```
+6. Copy the localhost url from the terminal and paste it in your browser.
+7. You are done!! :metal: Work with the project to check how it executes.
