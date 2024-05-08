@@ -59,8 +59,8 @@
             
         </div>
         <div class="bottom" style="margin-bottom: 50px;">
-            <button onclick="goToPage('{% url 'test' chapter='rat' %}')">Take Test</button>
-            <button onclick="goToPage('{% url 'adaptivelearning' chapter='rat' %}')">Return to the Test</button>
+            {% comment %} <button onclick="goToPage('{% url 'mathtest' chapter='rat' %}')">Take Test</button> {% endcomment %}
+            <button onclick="goToPage('{% url 'mathadaptivelearning' chapter='rat' %}')">Return to the Test</button>
         </div>
         </section>
     </body>
